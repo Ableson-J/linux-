@@ -12,7 +12,11 @@
 #include <stdlib.h>
 #include <sys/epoll.h>
 #include <pthread.h>
-#include "lst_timer.h"
+#include "11-2lst_timer.h"
+
+//如果是通过客户连接唤醒的，则直接根据收到的数据和errno决定是不是删除对应socket文件描述符和定时器
+//如果是定时器唤醒的，则处理定时任务，每5ms唤醒一次
+//user数组不用每次都清除，反正每次使用的时候都有重新赋值，不存在残留上一个连接数据的问题
 
 #define FD_LIMIT 65535
 #define MAX_EVENT_NUMBER 1024
@@ -144,6 +148,7 @@ int main( int argc, char* argv[] )
                 users[connfd].timer = timer;
                 timer_lst.add_timer( timer );
             }
+            //通过信号唤醒的
             else if( ( sockfd == pipefd[0] ) && ( events[i].events & EPOLLIN ) )
             {
                 int sig;
@@ -177,6 +182,7 @@ int main( int argc, char* argv[] )
                     }
                 }
             }
+            //通过io唤醒的
             else if(  events[i].events & EPOLLIN )
             {
                 memset( users[sockfd].buf, '\0', BUFFER_SIZE );

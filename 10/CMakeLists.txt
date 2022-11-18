@@ -3,4 +3,5 @@ project(codes)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(8-3test 8-3httpparser.cpp)
+add_executable(10-1test 10-1unievent.cpp)
+add_executable(10-3test 10-3sigurg.cpp)

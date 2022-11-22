@@ -1,0 +1,112 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "14",
+					"jsonFile" : "directory-14-Debug-5f59e56f631e4f856283.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "14",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "codes",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "14-1test::@1f5272c162bddcec5449",
+					"jsonFile" : "target-14-1test-Debug-62eae8fb4a769abb48cb.json",
+					"name" : "14-1test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "14-3test::@1f5272c162bddcec5449",
+					"jsonFile" : "target-14-3test-Debug-8185085a009302b3cd70.json",
+					"name" : "14-3test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "14-5test::@1f5272c162bddcec5449",
+					"jsonFile" : "target-14-5test-Debug-40e0cf12c4692ad30dba.json",
+					"name" : "14-5test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "cond_var_test::@1f5272c162bddcec5449",
+					"jsonFile" : "target-cond_var_test-Debug-7d7911e569d349f853c9.json",
+					"name" : "cond_var_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "signal_test::@1f5272c162bddcec5449",
+					"jsonFile" : "target-signal_test-Debug-b7de5d5e17b3a0af2993.json",
+					"name" : "signal_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jiang/net_program/codes/cmake-build-debug",
+		"source" : "/home/jiang/net_program/codes"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

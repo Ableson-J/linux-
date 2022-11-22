@@ -11,7 +11,7 @@
 #include <poll.h>
 #include <fcntl.h>
 
-#define BUFFER_SIZE 64
+#define BUFFER_SIZE 1025
 
 int main( int argc, char* argv[] )
 {
@@ -67,8 +67,9 @@ int main( int argc, char* argv[] )
         else if( fds[1].revents & POLLIN )
         {
             memset( read_buf, '\0', BUFFER_SIZE );
-            recv( fds[1].fd, read_buf, BUFFER_SIZE-1, 0 );
-            printf( "%s\n", read_buf );
+            int len = recv( fds[1].fd, read_buf, BUFFER_SIZE-1, 0 );
+            printf("data len is %d\n", len);
+            printf( "%s", read_buf );
         }
 
         if( fds[0].revents & POLLIN )

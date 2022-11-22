@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "11/11-3test"
+			"path" : "14/14-3test"
 		}
 	],
 	"backtrace" : 1,
@@ -14,7 +14,7 @@
 		],
 		"files" : 
 		[
-			"11/CMakeLists.txt"
+			"14/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -36,27 +36,16 @@
 			[
 				{
 					"fragment" : "-g"
-				},
-				{
-					"fragment" : "-std=gnu++14"
 				}
 			],
-			"language" : "CXX",
-			"languageStandard" : 
-			{
-				"backtraces" : 
-				[
-					1
-				],
-				"standard" : "14"
-			},
+			"language" : "C",
 			"sourceIndexes" : 
 			[
 				0
 			]
 		}
 	],
-	"id" : "11-3test::@4410fc15c5a3cde7a2b5",
+	"id" : "14-3test::@1f5272c162bddcec5449",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -70,14 +59,14 @@
 				"role" : "flags"
 			}
 		],
-		"language" : "CXX"
+		"language" : "C"
 	},
-	"name" : "11-3test",
-	"nameOnDisk" : "11-3test",
+	"name" : "14-3test",
+	"nameOnDisk" : "14-3test",
 	"paths" : 
 	{
-		"build" : "11",
-		"source" : "11"
+		"build" : "14",
+		"source" : "14"
 	},
 	"sourceGroups" : 
 	[
@@ -94,7 +83,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "11/11-3nonactive_conn.cpp",
+			"path" : "14/14-3thread_atfork.c",
 			"sourceGroupIndex" : 0
 		}
 	],

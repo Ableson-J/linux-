@@ -7,6 +7,7 @@
 
 #define BUFFER_SIZE 64
 class tw_timer;
+//绑定socket和定时器
 struct client_data
 {
     sockaddr_in address;
@@ -14,7 +15,7 @@ struct client_data
     char buf[ BUFFER_SIZE ];
     tw_timer* timer;
 };
-
+//定时器类
 class tw_timer
 {
 public:
@@ -69,6 +70,8 @@ public:
             ticks = timeout / TI;
         }
         int rotation = ticks / N;
+        //也可以写成
+        //int ts = ( cur_slot + ticks ) % N;
         int ts = ( cur_slot + ( ticks % N ) ) % N;
         tw_timer* timer = new tw_timer( rotation, ts );
         if( !slots[ts] )

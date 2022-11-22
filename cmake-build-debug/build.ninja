@@ -70,97 +70,196 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target 11-1test
+# Object build statements for EXECUTABLE target 14-1test
 
 
 #############################################
-# Order-only phony target for 11-1test
+# Order-only phony target for 14-1test
 
-build cmake_object_order_depends_target_11-1test: phony || 11/CMakeFiles/11-1test.dir
+build cmake_object_order_depends_target_14-1test: phony || 14/CMakeFiles/14-1test.dir
 
-build 11/CMakeFiles/11-1test.dir/11-1connect_timeout.cpp.o: CXX_COMPILER__11-1test_Debug /home/jiang/net_program/codes/11/11-1connect_timeout.cpp || cmake_object_order_depends_target_11-1test
-  DEP_FILE = 11/CMakeFiles/11-1test.dir/11-1connect_timeout.cpp.o.d
-  FLAGS = -g -std=gnu++14
-  OBJECT_DIR = 11/CMakeFiles/11-1test.dir
-  OBJECT_FILE_DIR = 11/CMakeFiles/11-1test.dir
+build 14/CMakeFiles/14-1test.dir/14-1mutual_lock.c.o: C_COMPILER__14-1test_Debug /home/jiang/net_program/codes/14/14-1mutual_lock.c || cmake_object_order_depends_target_14-1test
+  DEP_FILE = 14/CMakeFiles/14-1test.dir/14-1mutual_lock.c.o.d
+  FLAGS = -g
+  OBJECT_DIR = 14/CMakeFiles/14-1test.dir
+  OBJECT_FILE_DIR = 14/CMakeFiles/14-1test.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target 11-1test
+# Link build statements for EXECUTABLE target 14-1test
 
 
 #############################################
-# Link the executable 11/11-1test
+# Link the executable 14/14-1test
 
-build 11/11-1test: CXX_EXECUTABLE_LINKER__11-1test_Debug 11/CMakeFiles/11-1test.dir/11-1connect_timeout.cpp.o
+build 14/14-1test: C_EXECUTABLE_LINKER__14-1test_Debug 14/CMakeFiles/14-1test.dir/14-1mutual_lock.c.o
   FLAGS = -g
-  OBJECT_DIR = 11/CMakeFiles/11-1test.dir
+  OBJECT_DIR = 14/CMakeFiles/14-1test.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = 11/11-1test
-  TARGET_PDB = 11-1test.dbg
+  TARGET_FILE = 14/14-1test
+  TARGET_PDB = 14-1test.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target 11-3test
+# Object build statements for EXECUTABLE target 14-3test
 
 
 #############################################
-# Order-only phony target for 11-3test
+# Order-only phony target for 14-3test
 
-build cmake_object_order_depends_target_11-3test: phony || 11/CMakeFiles/11-3test.dir
+build cmake_object_order_depends_target_14-3test: phony || 14/CMakeFiles/14-3test.dir
 
-build 11/CMakeFiles/11-3test.dir/11-3nonactive_conn.cpp.o: CXX_COMPILER__11-3test_Debug /home/jiang/net_program/codes/11/11-3nonactive_conn.cpp || cmake_object_order_depends_target_11-3test
-  DEP_FILE = 11/CMakeFiles/11-3test.dir/11-3nonactive_conn.cpp.o.d
-  FLAGS = -g -std=gnu++14
-  OBJECT_DIR = 11/CMakeFiles/11-3test.dir
-  OBJECT_FILE_DIR = 11/CMakeFiles/11-3test.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target 11-3test
-
-
-#############################################
-# Link the executable 11/11-3test
-
-build 11/11-3test: CXX_EXECUTABLE_LINKER__11-3test_Debug 11/CMakeFiles/11-3test.dir/11-3nonactive_conn.cpp.o
+build 14/CMakeFiles/14-3test.dir/14-3thread_atfork.c.o: C_COMPILER__14-3test_Debug /home/jiang/net_program/codes/14/14-3thread_atfork.c || cmake_object_order_depends_target_14-3test
+  DEP_FILE = 14/CMakeFiles/14-3test.dir/14-3thread_atfork.c.o.d
   FLAGS = -g
-  OBJECT_DIR = 11/CMakeFiles/11-3test.dir
+  OBJECT_DIR = 14/CMakeFiles/14-3test.dir
+  OBJECT_FILE_DIR = 14/CMakeFiles/14-3test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 14-3test
+
+
+#############################################
+# Link the executable 14/14-3test
+
+build 14/14-3test: C_EXECUTABLE_LINKER__14-3test_Debug 14/CMakeFiles/14-3test.dir/14-3thread_atfork.c.o
+  FLAGS = -g
+  OBJECT_DIR = 14/CMakeFiles/14-3test.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = 11/11-3test
-  TARGET_PDB = 11-3test.dbg
+  TARGET_FILE = 14/14-3test
+  TARGET_PDB = 14-3test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 14-5test
+
+
+#############################################
+# Order-only phony target for 14-5test
+
+build cmake_object_order_depends_target_14-5test: phony || 14/CMakeFiles/14-5test.dir
+
+build 14/CMakeFiles/14-5test.dir/14-5sigmask.c.o: C_COMPILER__14-5test_Debug /home/jiang/net_program/codes/14/14-5sigmask.c || cmake_object_order_depends_target_14-5test
+  DEP_FILE = 14/CMakeFiles/14-5test.dir/14-5sigmask.c.o.d
+  FLAGS = -g
+  OBJECT_DIR = 14/CMakeFiles/14-5test.dir
+  OBJECT_FILE_DIR = 14/CMakeFiles/14-5test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 14-5test
+
+
+#############################################
+# Link the executable 14/14-5test
+
+build 14/14-5test: C_EXECUTABLE_LINKER__14-5test_Debug 14/CMakeFiles/14-5test.dir/14-5sigmask.c.o
+  FLAGS = -g
+  OBJECT_DIR = 14/CMakeFiles/14-5test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 14/14-5test
+  TARGET_PDB = 14-5test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target cond_var_test
+
+
+#############################################
+# Order-only phony target for cond_var_test
+
+build cmake_object_order_depends_target_cond_var_test: phony || 14/CMakeFiles/cond_var_test.dir
+
+build 14/CMakeFiles/cond_var_test.dir/cond_var_test.cpp.o: CXX_COMPILER__cond_var_test_Debug /home/jiang/net_program/codes/14/cond_var_test.cpp || cmake_object_order_depends_target_cond_var_test
+  DEP_FILE = 14/CMakeFiles/cond_var_test.dir/cond_var_test.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = 14/CMakeFiles/cond_var_test.dir
+  OBJECT_FILE_DIR = 14/CMakeFiles/cond_var_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target cond_var_test
+
+
+#############################################
+# Link the executable 14/cond_var_test
+
+build 14/cond_var_test: CXX_EXECUTABLE_LINKER__cond_var_test_Debug 14/CMakeFiles/cond_var_test.dir/cond_var_test.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = 14/CMakeFiles/cond_var_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 14/cond_var_test
+  TARGET_PDB = cond_var_test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target signal_test
+
+
+#############################################
+# Order-only phony target for signal_test
+
+build cmake_object_order_depends_target_signal_test: phony || 14/CMakeFiles/signal_test.dir
+
+build 14/CMakeFiles/signal_test.dir/mutil_thread_signal_test.cpp.o: CXX_COMPILER__signal_test_Debug /home/jiang/net_program/codes/14/mutil_thread_signal_test.cpp || cmake_object_order_depends_target_signal_test
+  DEP_FILE = 14/CMakeFiles/signal_test.dir/mutil_thread_signal_test.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = 14/CMakeFiles/signal_test.dir
+  OBJECT_FILE_DIR = 14/CMakeFiles/signal_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target signal_test
+
+
+#############################################
+# Link the executable 14/signal_test
+
+build 14/signal_test: CXX_EXECUTABLE_LINKER__signal_test_Debug 14/CMakeFiles/signal_test.dir/mutil_thread_signal_test.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = 14/CMakeFiles/signal_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 14/signal_test
+  TARGET_PDB = signal_test.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
-build 11/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/jiang/net_program/codes/cmake-build-debug/11 && /snap/clion/209/bin/cmake/linux/bin/ccmake -S/home/jiang/net_program/codes -B/home/jiang/net_program/codes/cmake-build-debug
+build 14/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/jiang/net_program/codes/cmake-build-debug/14 && /snap/clion/209/bin/cmake/linux/bin/ccmake -S/home/jiang/net_program/codes -B/home/jiang/net_program/codes/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
 
-build 11/edit_cache: phony 11/CMakeFiles/edit_cache.util
+build 14/edit_cache: phony 14/CMakeFiles/edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build 11/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/jiang/net_program/codes/cmake-build-debug/11 && /snap/clion/209/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/jiang/net_program/codes -B/home/jiang/net_program/codes/cmake-build-debug
+build 14/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/jiang/net_program/codes/cmake-build-debug/14 && /snap/clion/209/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/jiang/net_program/codes -B/home/jiang/net_program/codes/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build 11/rebuild_cache: phony 11/CMakeFiles/rebuild_cache.util
+build 14/rebuild_cache: phony 14/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Target aliases.
 
-build 11-1test: phony 11/11-1test
+build 14-1test: phony 14/14-1test
 
-build 11-3test: phony 11/11-3test
+build 14-3test: phony 14/14-3test
+
+build 14-5test: phony 14/14-5test
+
+build cond_var_test: phony 14/cond_var_test
+
+build signal_test: phony 14/signal_test
 
 # =============================================================================
 # Folder targets.
@@ -170,14 +269,14 @@ build 11-3test: phony 11/11-3test
 #############################################
 # Folder: /home/jiang/net_program/codes/cmake-build-debug
 
-build all: phony 11/all
+build all: phony 14/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/jiang/net_program/codes/cmake-build-debug/11
+# Folder: /home/jiang/net_program/codes/cmake-build-debug/14
 
-build 11/all: phony 11/11-1test 11/11-3test
+build 14/all: phony 14/14-1test 14/14-3test 14/14-5test 14/cond_var_test 14/signal_test
 
 # =============================================================================
 # Built-in targets
@@ -186,14 +285,14 @@ build 11/all: phony 11/11-1test 11/11-3test
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../11/CMakeLists.txt ../CMakeLists.txt /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../14/CMakeLists.txt ../CMakeLists.txt /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../11/CMakeLists.txt ../CMakeLists.txt /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+build ../14/CMakeLists.txt ../CMakeLists.txt /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
 
 
 #############################################

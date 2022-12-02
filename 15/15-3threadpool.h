@@ -5,7 +5,7 @@
 #include <cstdio>
 #include <exception>
 #include <pthread.h>
-#include "locker.h"
+#include "14-2locker.h"
 
 template< typename T >
 class threadpool
@@ -81,7 +81,7 @@ bool threadpool< T >::append( T* request )
     m_queuestat.post();
     return true;
 }
-
+//一个worker就是一个线程
 template< typename T >
 void* threadpool< T >::worker( void* arg )
 {
@@ -89,7 +89,7 @@ void* threadpool< T >::worker( void* arg )
     pool->run();
     return pool;
 }
-
+//每个线程调用此函数，从队列里取任务
 template< typename T >
 void threadpool< T >::run()
 {
@@ -109,6 +109,7 @@ void threadpool< T >::run()
         {
             continue;
         }
+        printf("thread id is %d\n", pthread_self());
         request->process();
     }
 }

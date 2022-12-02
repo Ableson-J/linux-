@@ -26,7 +26,10 @@ public:
     pid_t m_pid;
     int m_pipefd[2];
 };
-
+//模板参数为处理逻辑任务的类（T），这样就把IO处理和逻辑处理分开了
+//在进程池中的子进程负责accept连接，连接成功后初始化这个T类
+// 客户端传过来数据之后调用T类的process方法处理客户端请求
+//每个进程池的T一经确定，就是一个确定的类了，逻辑处理就只能在这个类里去实现了
 template< typename T >
 class processpool
 {
@@ -64,6 +67,7 @@ private:
     process* m_sub_process;
     static processpool< T >* m_instance;
 };
+//静态成员变量初始化
 template< typename T >
 processpool< T >* processpool< T >::m_instance = NULL;
 
@@ -172,6 +176,8 @@ void processpool< T >::run()
     run_parent();
 }
 
+//主进程和子进程之间通过管道通信，通知子进程有新的连接到来，子进程接受连接
+//监听fd在创建子进程的时候默认打开的
 template< typename T >
 void processpool< T >::run_child()
 {
@@ -181,6 +187,7 @@ void processpool< T >::run_child()
     addfd( m_epollfd, pipefd );
 
     epoll_event events[ MAX_EVENT_NUMBER ];
+    //为每一个进程new一个用户数组，用以保存用户连接，每一个连接想做的事情不一样
     T* users = new T [ USER_PER_PROCESS ];
     assert( users );
     int number = 0;
@@ -307,13 +314,14 @@ void processpool< T >::run_parent()
                 int i =  sub_process_counter;
                 do
                 {
+                    //找到一个还在运行的子进程
                     if( m_sub_process[i].m_pid != -1 )
                     {
+                        //如果进程还在运行
                         break;
                     }
                     i = (i+1)%m_process_number;
-                }
-                while( i != sub_process_counter );
+                }while( i != sub_process_counter );
                 
                 if( m_sub_process[i].m_pid == -1 )
                 {
@@ -326,6 +334,7 @@ void processpool< T >::run_parent()
                 printf( "send request to child %d\n", i );
                 //sub_process_counter %= m_process_number;
             }
+            //信号处理
             else if( ( sockfd == sig_pipefd[0] ) && ( events[i].events & EPOLLIN ) )
             {
                 int sig;
@@ -349,6 +358,8 @@ void processpool< T >::run_parent()
                                 {
                                     for( int i = 0; i < m_process_number; ++i )
                                     {
+                                        //如果进程池中第i个进程退出了，则主进程关闭相应的通道
+                                        //并且设置相应的m_pid为-1,标记该子进程已经退出
                                         if( m_sub_process[i].m_pid == pid )
                                         {
                                             printf( "child %d join\n", i );
@@ -357,6 +368,7 @@ void processpool< T >::run_parent()
                                         }
                                     }
                                 }
+                                //如果所有子进程都已经推出了，则父进程也退出
                                 m_stop = true;
                                 for( int i = 0; i < m_process_number; ++i )
                                 {
@@ -370,6 +382,7 @@ void processpool< T >::run_parent()
                             case SIGTERM:
                             case SIGINT:
                             {
+                                //如果父进程受到终止信号，则杀死所有子进程，并等待它们全部结束，
                                 printf( "kill all the clild now\n" );
                                 for( int i = 0; i < m_process_number; ++i )
                                 {

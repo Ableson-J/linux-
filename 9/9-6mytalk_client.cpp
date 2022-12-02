@@ -74,9 +74,11 @@ int main( int argc, char* argv[] )
 
         if( fds[0].revents & POLLIN )
         {
+            char *buf = "cgi\r\n";
+            send(sockfd, buf, sizeof(buf) ,0);
             //直接通过管道将内核缓冲区的接受到的数据拷贝到内核发送缓冲区，不必与用户态程序交互，提高效率
-            ret = splice( 0, NULL, pipefd[1], NULL, 32768, SPLICE_F_MORE | SPLICE_F_MOVE );
-            ret = splice( pipefd[0], NULL, sockfd, NULL, 32768, SPLICE_F_MORE | SPLICE_F_MOVE );
+//            ret = splice( 0, NULL, pipefd[1], NULL, 32768, SPLICE_F_MORE | SPLICE_F_MOVE );
+//            ret = splice( pipefd[0], NULL, sockfd, NULL, 32768, SPLICE_F_MORE | SPLICE_F_MOVE );
         }
     }
     

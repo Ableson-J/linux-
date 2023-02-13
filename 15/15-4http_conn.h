@@ -38,7 +38,7 @@ public:
         CHECK_STATE_HEADER,             // 当前正在分析头部字段
         CHECK_STATE_CONTENT
     };
-    // 从在状态机的三种可能状态，即行的读取状态
+    // 从状态机的三种可能状态，即行的读取状态
     enum LINE_STATUS {
         LINE_OK = 0,            // 读取到一个完整的行
         LINE_BAD,               // 行出错

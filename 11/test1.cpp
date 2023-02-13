@@ -1,51 +1,49 @@
-//
-// Created by jiang on 22-11-19.
-//
-
 #include <stdio.h>
- #include <stdlib.h>
- #include <unistd.h>
- #include <stdbool.h>
- #include <signal.h>
- #include <sys/types.h>
- #include <errno.h>
- #include <string.h>
-#include <assert.h>
-#include <iostream>
-
-using namespace std;
- void int_handler (int signum)
- {
-     cout << "here5" << endl;
-     printf("int handler %d\n",signum);
- }
-
-void addsig( int sig )
+#include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <signal.h>
+void f(int sig)
 {
-    struct sigaction sa;
-    memset( &sa, '\0', sizeof( sa ) );
-    sa.sa_handler = int_handler;
-//    sa.sa_flags |= SA_RESTART;
-    sigfillset( &sa.sa_mask );
-    assert( sigaction( sig, &sa, NULL ) != -1 );
+    printf(" process pid:%d\n",getpid());
+
 }
-
- int main(int argc, char **argv)
+int main()
 {
-     char buf[100];
-     ssize_t ret;
-     printf("here4\n");
-    addsig(SIGINT);
-    printf("here3\n");
-    bzero(buf,100);
-    printf("here1\n");
-    ret = read(STDIN_FILENO,buf,10);
-    printf("here2\n");
-    if (ret == -1)
+    sigset_t set;              //创建信号集
+    sigemptyset(&set);         //清空信号集
+    sigaddset(&set,2);              //添加信号到信号集中，2为SIGINT
+    sigprocmask(SIG_BLOCK,&set,NULL);   //阻塞掩码，阻塞信号集
+    pid_t pid =     fork();
+    if(pid==-1)
     {
-        printf("read error %s\n", strerror(errno));
-
+        perror("fork filed:");
+        return -1;
     }
-    printf("read %d bytes, content is %s\n",ret,buf    );
-    return 0;
- }
+    else if(pid >0)   //父进程
+    {
+        signal(SIGINT,f);
+        printf("father pid :%d\n",getpid());
+        for(int i=20;i>=0;i--)
+        {
+            printf("%d\n",i);
+            sleep(1);
+        }
+        sigprocmask(SIG_UNBLOCK,&set,NULL);   //解除阻塞信号集
+        wait(NULL);
+    }
+    else               //子进程
+    {
+        printf("child pid :%d\n",getpid());
+        signal(SIGINT,f);      // 这里会继承父进程的阻塞掩码，被阻塞
+        printf("child sleep 5s\n");
+        sleep(5);
+        printf("child wake\n");
+        sigprocmask(SIG_UNBLOCK,&set,NULL);   //解除阻塞信号集
+        pause();
+    }
+}
